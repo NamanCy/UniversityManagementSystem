@@ -25,10 +25,12 @@ public class Project extends JFrame implements ActionListener {
 
         JMenuItem facultyInfo = new JMenuItem("New Faculty Information");
         facultyInfo.setBackground(Color.WHITE);
+        facultyInfo.addActionListener(this);
         newInformation.add(facultyInfo);
 
         JMenuItem studentInfo = new JMenuItem("New Student Information");
         studentInfo.setBackground(Color.WHITE);
+        studentInfo.addActionListener(this);
         newInformation.add(studentInfo);
 
         //Details
@@ -38,11 +40,14 @@ public class Project extends JFrame implements ActionListener {
 
         JMenuItem facultyDetails = new JMenuItem("View Faculty Details");
         facultyDetails.setBackground(Color.WHITE);
+        facultyDetails.addActionListener(this);
         details.add(facultyDetails);
 
         JMenuItem studentDetails = new JMenuItem("View Student Details");
         studentDetails.setBackground(Color.WHITE);
+        studentDetails.addActionListener(this);
         details.add(studentDetails);
+0
 
         //Leave
         JMenu leave = new JMenu("Apply Leave");
@@ -157,6 +162,14 @@ public class Project extends JFrame implements ActionListener {
             } catch (Exception e) {
 
             }
+        } else if (msg.equals("New Faculty Information")) {
+            new AddTeacher();
+        } else if (msg.equals("New Student Information")) {
+            new AddStudent();
+        } else if (msg.equals("View Faculty Details")) {
+            new TeacherDetails();
+        } else if (msg.equals("View Student Details")) {
+            new StudentDetails();
         }
     }
     public static void main(String[] args) {
