@@ -99,10 +99,12 @@ public class Project extends JFrame implements ActionListener {
 
         JMenuItem updateFacultyInfo = new JMenuItem("Update Faculty Details");
         updateFacultyInfo.setBackground(Color.WHITE);
+        updateFacultyInfo.addActionListener(this);
         updateInfo.add(updateFacultyInfo);
 
         JMenuItem updateStudentInfo = new JMenuItem("Update Student Details");
         updateStudentInfo.setBackground(Color.WHITE);
+        updateStudentInfo.addActionListener(this);
         updateInfo.add(updateStudentInfo);
 
         //Fee
@@ -182,6 +184,10 @@ public class Project extends JFrame implements ActionListener {
             new TeacherLeaveDetails();
         } else if (msg.equals("Student Leave Details")) {
             new StudentLeaveDetails();
+        } else if (msg.equals("Update Faculty Details")) {
+            new UpdateTeacher();
+        } else if (msg.equals("Update Student Details")) {
+            new UpdateStudent();
         }
     }
     public static void main(String[] args) {
