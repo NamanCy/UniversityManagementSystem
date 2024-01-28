@@ -86,6 +86,7 @@ public class Project extends JFrame implements ActionListener {
 
         JMenuItem examResults = new JMenuItem("Examination Results");
         examResults.setBackground(Color.WHITE);
+        examResults.addActionListener(this);
         exams.add(examResults);
 
         JMenuItem enterMarks = new JMenuItem("Enter Marks");
@@ -191,6 +192,8 @@ public class Project extends JFrame implements ActionListener {
             new UpdateStudent();
         } else if (msg.equals("Enter Marks")) {
             new EnterMarks();
+        } else if (msg.equals("Examination Results")) {
+            new ExaminationDetails();
         }
     }
     public static void main(String[] args) {
